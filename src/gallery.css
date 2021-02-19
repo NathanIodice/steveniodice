@@ -1,0 +1,25 @@
+.imgList {
+    margin: 50px 10px;
+}
+
+.galleryContainer {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 300px));
+    grid-template-columns: repeat(auto-fill, minmax(100px,400px));
+    justify-items: center;
+    grid-gap: 10px;
+    justify-content:center;
+}
+
+.imgContainer{
+    display: block;
+    box-shadow: black 2px 2px 5px;
+
+}
+
+.imgContainer img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
