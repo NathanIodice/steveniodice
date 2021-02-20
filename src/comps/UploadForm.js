@@ -11,10 +11,6 @@ export default function UploadForm() {
         let selected = e.target.files;
         setFile(selected)
     }
-    function upload(imgRef) {
-        const galleryRef = firebase.database().ref("gallery");
-        galleryRef.push({imgRef})
-    }
 
 
     const UploadHandler = (e) => {

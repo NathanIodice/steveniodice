@@ -4,6 +4,7 @@ import Head from "./comps/Head"
 import Gallery from "./comps/Gallery"
 import Home from "./comps/Home"
 import { BrowserRouter as Router, Route,Switch} from "react-router-dom"
+import "./scrollbar.css"
 
 function App() {
   return (
