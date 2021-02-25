@@ -1,0 +1,87 @@
+.musicPageContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(47, 47, 47);
+}
+
+
+.musicPageContainer ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+
+  }
+
+.musicPageContainer ::-webkit-scrollbar-track {
+    background: #474747; 
+    border-radius: 15px;
+
+
+  }
+.musicPageContainer ::-webkit-scrollbar-thumb {
+    background: rgb(201, 201, 201);
+    border-radius: 15px;
+  }
+
+.playerButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background: white;
+    box-shadow: rgb(181, 181, 181) 0px 0px 5px 3px;
+    margin: 2px;
+}
+
+.playerButtons {
+    margin: 5px;
+}
+.current {
+    background: rgb(232, 232, 232);
+    color: rgb(43, 43, 43);;
+}
+.listItem{
+    cursor: pointer;
+    padding: 2px;
+}
+
+.songList {
+    list-style: none;
+    margin: 4px;
+    margin-top: 50px;
+    padding: 2px;
+    width: 90%;
+    box-shadow: rgb(181, 181, 181) 0px 0px 5px 3px;
+    border-radius: 10px 0 0 10px;
+    max-height: 150px;
+    overflow: auto;
+    background: rgb(43, 43, 43);
+    color: rgb(216, 216, 216);
+    
+}
+
+.musicPlayer {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    background: rgb(232, 232, 232);
+    box-shadow: rgba(0, 0, 0, 0.614) 8px 8px 10px;
+    justify-content: center;
+    border-radius: 15px;
+    align-items: center;
+    padding: 10px;
+    height: 300px;
+}
+
+.musicPlayer h1 {
+    text-align: center;
+}

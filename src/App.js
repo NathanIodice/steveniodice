@@ -5,6 +5,7 @@ import Gallery from "./comps/Gallery"
 import Home from "./comps/Home"
 import { BrowserRouter as Router, Route,Switch} from "react-router-dom"
 import "./scrollbar.css"
+import MusicPlayer from "./comps/MusicPlayer";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Route path="/admin/photography">
             <UploadForm/>
             <Gallery />
+          </Route>
+          <Route path="/Music">
+            <MusicPlayer/>
           </Route>
         </Switch>
       </Router>

@@ -6,7 +6,7 @@ export default function ImgList({item}) {
             <div className="galleryContainer">
                 {item.map((post) => (
                     <div className="imgContainer">
-                        <img src={post.img} alt="" srcset=""/>
+                        <img key={post.id} src={post.img} alt="" srcset=""/>
                     </div>
                 ))}
             </div>
