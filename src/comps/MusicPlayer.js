@@ -3,6 +3,7 @@ import MusicUpload from "./MusicUpload"
 import "../music.css"
 import useMusicData from "./useMusicData"
 import AudioPlayer from "./AudioPlayer"
+import Loading from "./loading"
 
 export default function MusicPlayer() {
     const {music, loaded} = useMusicData(); 
@@ -22,7 +23,7 @@ export default function MusicPlayer() {
             {/* <MusicUpload/> */}
             {loaded&&music.length > 0?<AudioPlayer
             item={music}
-            hasLoaded={loaded}/>:<div>Loading</div>}
+            hasLoaded={loaded}/>:<Loading />}
 
         </div>
     )

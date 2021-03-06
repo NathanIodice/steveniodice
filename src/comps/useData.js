@@ -4,6 +4,8 @@ import firebase from "../firebase/config"
 
 const useData = () => {
     const [gallery, setGallery] = useState([])
+    const [loaded, setLoaded] = useState(false)
+
 
     useEffect(() => {
         const galleryRef = firebase.database().ref("gallery");
@@ -22,11 +24,12 @@ const useData = () => {
             setGallery(
                 allItems
             )
+            setLoaded(true)
         })
     },[])
 
     return {
-        gallery
+        gallery, loaded
     }
 }
 

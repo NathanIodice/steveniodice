@@ -32,3 +32,23 @@
     height: 100%;
     object-fit: cover;
 }
+
+.uploadForm{
+    margin: 50px 5% 0 5%
+}
+
+.login {
+    display: flex;
+}
+
+.delete {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 50%;
+}

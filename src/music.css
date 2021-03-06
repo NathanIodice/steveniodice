@@ -44,6 +44,8 @@
 
 .playerButtons {
     margin: 5px;
+    margin-bottom: -20px;
+    margin-top: 20px;
 }
 .current {
     background: rgb(232, 232, 232);

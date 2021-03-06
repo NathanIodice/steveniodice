@@ -14,7 +14,7 @@ export default function Home() {
             <main className="sidesContainer">
 
                 <section className="side">
-                    <Link to="music">
+                    <Link to="/music">
                     <div className="leftSide"
 
                     >

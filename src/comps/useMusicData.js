@@ -18,7 +18,6 @@ const useMusicData = () => {
                         id:item,
                         file: items[item].music,
                         fileName: items[item].fileName,
-                        songLength: items[item].sLength
                     }
                     )
             }

@@ -26,7 +26,7 @@
 
 .side{
     flex:1;
-    transition: flex ease 2s;
+    transition: flex linear 1s;
 }
 
 .side h1 {
@@ -45,20 +45,23 @@
     color: #ffffff;
     flex-direction: column;
     position: relative;
+    z-index: 2;
+}
+
+.rightSide {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    flex-direction: column;
+    position: relative;
     z-index: 1;
 }
 
 
-.musicImg{
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    background-image: url("/src/img/music.jpg");
-    background-size: cover;
-    top: 0;
-    left: 0;    
-    opacity: .2;
-}
 
 .photoImg{
     width: inherit;
@@ -66,9 +69,25 @@
     position: absolute;
     background-image: url("/src/img/photo.jpg");
     background-size: cover;
+    background-attachment: scroll;
+
     top: 0;
     left: 0;    
     opacity: .9;
+}
+
+.musicImg{
+    width: inherit;
+    height:inherit;
+    position: absolute;
+    background-image: url("/src/img/music.jpg");
+
+    background-position-x: center;
+    background-size: cover;
+    background-attachment: scroll;
+    top: 0;
+    left: 0;    
+    opacity: .2;
 }
 
 .leftSide::before{
@@ -104,18 +123,7 @@
 
 }
 
-.rightSide {
-    background: #ffffff;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    flex-direction: column;
-    position: relative;
-    z-index: 2;
-}
+
 
 .rightSide::before{
     content: "";
@@ -155,7 +163,7 @@
 
 
 .side:hover{
-    flex: 5;
+    flex: 3;
 }
 
 .center {
@@ -180,6 +188,6 @@
         flex:1;
     }
     .side:hover{
-        flex: 5;
+        flex: 1;
     }
   }
