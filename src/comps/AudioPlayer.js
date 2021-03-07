@@ -1,12 +1,17 @@
 import {useState,useRef,useEffect} from 'react'
 import "../music.css"
+import firebase from "../firebase/config"
 
-export default function AudioPlayer({item, hasLoaded}) {
+export default function AudioPlayer({item, hasLoaded, loggedIn}) {
 
     const [currentSong,setCurrentSong] = useState(0)
     const [isPlaying,setIsPlaying] = useState(false)
     const audioEl = useRef(null)
-    const songName = item[currentSong].fileName.replace(".mp3","")
+
+    const handleDelete = (id) => {
+        console.log(id)
+        firebase.database().ref(`music/${id}`).remove()
+    }
 
     const songChanged = () => {
         if (isPlaying){
@@ -74,16 +79,21 @@ export default function AudioPlayer({item, hasLoaded}) {
         <div>
 
                 <div className="musicPlayer">
-                    <h1> {songName}  </h1>
+                    <h1 className="songTitle"> 
+                    
+                    {item[currentSong]?<div>{item[currentSong].fileName.replace(".mp3","")}</div>:""}
+
+                    
+                    </h1>
                     <p></p>
-                    <audio ref={audioEl} src={item[currentSong].file} >
-                    </audio>
+                    {item[currentSong]?<audio ref={audioEl} src={item[currentSong].file} >
+                    </audio>:null}
 
                     <section className="playerButtons">
 
                     <button className="nextButton playerButton"
                         onClick={prevSong}
-                    ><i class="fas fa-backward"></i></button>
+                    ><i className="fas fa-backward"></i></button>
 
                     <button className="playButton playerButton" 
                         onClick={() => {setIsPlaying(!isPlaying)}}>
@@ -92,7 +102,7 @@ export default function AudioPlayer({item, hasLoaded}) {
 
                     <button className="PreviousButton playerButton"
                         onClick={nextSong}>
-                        <i class="fas fa-forward"></i>
+                        <i className="fas fa-forward"></i>
                     </button>
 
                     </section>
@@ -101,12 +111,18 @@ export default function AudioPlayer({item, hasLoaded}) {
                     
                     <ul className="songList">
                         {item.map((list, index) => (
-                            <div> 
+                            <div key={list.id}> 
                                 
                                <li value={list.file}  onClick={()=>{
                                 setCurrentSong(index)
                                 songChanged()
                             }} key={list.id} id={index} className={index === currentSong?"listItem current":"listItem"}>
+                                {loggedIn.loggedIn?<button
+                         onClick = {() => {
+                          handleDelete(list.id)   
+                         }}
+                         className="bin"
+                         ><i className="fas fa-trash-alt"></i></button>:""}
                                 {list.fileName.replace(".mp3", "")}</li></div>
 
                         ))}

@@ -5,7 +5,7 @@ import useMusicData from "./useMusicData"
 import AudioPlayer from "./AudioPlayer"
 import Loading from "./loading"
 
-export default function MusicPlayer() {
+export default function MusicPlayer(loggedIn) {
     const {music, loaded} = useMusicData(); 
     
     useEffect(() => {
@@ -22,6 +22,7 @@ export default function MusicPlayer() {
         <div className="musicPageContainer">
             {/* <MusicUpload/> */}
             {loaded&&music.length > 0?<AudioPlayer
+            loggedIn = {loggedIn}
             item={music}
             hasLoaded={loaded}/>:<Loading />}
 

@@ -6,6 +6,7 @@ import Home from "./comps/Home"
 import { BrowserRouter as Router, Route,Switch} from "react-router-dom"
 import "./scrollbar.css"
 import MusicPlayer from "./comps/MusicPlayer";
+import MusicUpload from "./comps/MusicUpload"
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/Music">
             <MusicPlayer/>
+          </Route>
+          <Route path="/admin/music">
+            <MusicUpload/>
           </Route>
         </Switch>
       </Router>

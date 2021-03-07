@@ -64,7 +64,7 @@
     width: 90%;
     box-shadow: rgb(181, 181, 181) 0px 0px 5px 3px;
     border-radius: 10px 0 0 10px;
-    max-height: 150px;
+    height: 600px;
     overflow: auto;
     background: rgb(43, 43, 43);
     color: rgb(216, 216, 216);
@@ -81,9 +81,20 @@
     border-radius: 15px;
     align-items: center;
     padding: 10px;
-    height: 300px;
+    height: 400px;
 }
 
 .musicPlayer h1 {
     text-align: center;
+}
+
+.bin {
+    margin:0 5px;
+}
+
+.songTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
 }

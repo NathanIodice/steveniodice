@@ -3,8 +3,8 @@ import "../load.css"
 export default function Loading() {
     return (
         <div>
-                <div class="loadingContainer">
-        <div class="loading">
+                <div className="loadingContainer">
+        <div className="loading">
             <div className="letter" >L</div>
             <div className="letter" >O</div>
             <div className="letter" >A</div>
